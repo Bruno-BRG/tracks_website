@@ -43,3 +43,14 @@ csrf: { enabled: false, reason: "Bearer-authenticated API; no cookie authenticat
 ```
 
 Requires Node.js 24 or newer. See the [JOT guide](https://github.com/Bruno-BRG/js_on_tracks#readme) and the [blog example](https://github.com/Bruno-BRG/js_on_tracks/tree/master/examples/blog).
+
+## Deploy com Docker (Coolify)
+
+A imagem parte de node:24-slim, instala com `npm ci` e sobe com `jot db:migrate`
+seguido do entry gerado (sem `--watch`).
+
+Env vars no Coolify:
+
+- `JOT_SECRET`: obrigatório em produção (ex.: `openssl rand -hex 32`).
+- `DATABASE_URL`: use `/data/prod.sqlite` com um volume montado em `/data`.
+- `PORT`: padrão 3000; exponha a porta 3000.
