@@ -2,5 +2,7 @@ node_modules/
 .jot/
 *.sqlite
 *.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
 .env
 .env.local
